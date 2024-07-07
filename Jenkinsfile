@@ -1,16 +1,18 @@
-pipeline {
-    agent any 
-    stages {
-        stage('git integration') {
-            steps {
+pipeline
+{
+    agent any
+
+    stages{
+        stage ('git integration')
+        {
+            step {
                 git branch: 'main', url: 'https://github.com/Jeevagithubvj/Jeeva.git'
             }
         }
-        stage('build') {
-            steps {
-                // Adjusting for Windows to compile and run Java code
-                bat 'javac HelloWorld.java'
-                bat 'java HelloWorld'
+        stage ('build')
+        {
+            step {
+                sh ('javac HelloWorld;java HelloWorld')
             }
         }
     }
