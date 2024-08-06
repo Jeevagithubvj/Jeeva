@@ -1,16 +1,24 @@
 pipeline {
-    agent any
+    agent none
     stages {
-        stage('Git Integration') {
+        stage('first') {
+            agent {
+                docker {
+                    image 'maven:latest'
+                }
+            }
             steps {
-                git branch: 'main', url: 'https://github.com/Jeevagithubvj/Jeeva.git'
+                sh 'ls'
             }
         }
-        
-        stage('Build') {
+        stage('second') {
+            agent {
+                docker {
+                    image 'nginx:latest'
+                }
+            }
             steps {
-                sh 'javac HelloWorld.java'
-                sh 'java HelloWorld'
+                sh 'pwd'
             }
         }
     }
