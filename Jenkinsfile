@@ -2,9 +2,7 @@ pipeline
 {
   agent
   {
-    label {
-      'dai_gomala'
-    }
+    label 'dai_gomala'
   }
      stages
      {
