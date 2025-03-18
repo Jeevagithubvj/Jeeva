@@ -1,9 +1,6 @@
 pipeline
 {
-  agent
-  {
-    label 'dai_gomala'
-  }
+  agent any
      stages
      {
         stage ('git')
