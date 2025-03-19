@@ -13,7 +13,7 @@ pipeline
                 script
                 {
                 echo 'checkouts completed'
-                sh '''ss -tuln '''
+                sh '''ls -ltr'''
                 }
             }
         }
