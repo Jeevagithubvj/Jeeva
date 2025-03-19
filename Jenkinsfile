@@ -1,14 +1,21 @@
 pipeline
 {
-  agent any
-     stages
-     {
+    agent
+    {
+        docker { image 'nginx:latest'}
+    }
+    stages
+    {
         stage ('git checkout')
         {
             steps
             {
-                echo "hello world"
+                echo 'checkouts completed'
+            }
+            steps
+            {
+                sh '''ss -tuln '''
             }
         }
-     }
+    }
 }
