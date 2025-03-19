@@ -10,12 +10,13 @@ pipeline
         {
             steps
             {
+                script
+                {
                 echo 'checkouts completed'
-            }
-            steps
-            {
                 sh '''ss -tuln '''
+                }
             }
         }
+    
     }
 }
